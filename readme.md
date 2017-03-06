@@ -6,7 +6,7 @@ This is a simple web crawler that crawls
 
 ### To start 
 ------------
-```python
+```sh
 
 pip install -r requirements.txt
 
@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ### To run the crawler
 
-```
+```sh
  cd <directory>
  scrapy crawl wizard
 
@@ -34,6 +34,7 @@ The mongodb collection schema is as follows
     event_link 
     date
 ```
+
 The mongodb database is `mommy` and the collection is `crawl`
 To view the crawled data run the below commands at the mongo shell
 
