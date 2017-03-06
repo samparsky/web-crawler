@@ -20,6 +20,7 @@ class Wizard(scrapy.Spider):
 	def extract_body(self,response):
 		''''
 		Extract data from html body	
+		@scrapes body of the response to parse using xpath
 		'''
 		event = {}
 
@@ -41,6 +42,9 @@ class Wizard(scrapy.Spider):
 	def parse_item(self, response):
 		'''
 		Extract data from application/ld+json of the html document
+		@url parses each url from the search result page
+		@returns event
+		@scrapes name description location url startDate event_link age_group price
 		'''
 		extractor = JsonLdExtractor()
 		items = extractor.extract(response.body_as_unicode(), response.url)
@@ -55,8 +59,8 @@ class Wizard(scrapy.Spider):
 
 		# xpath rules for extracting data
 		EVENT_LINK_XPATH = '//div[contains(@class,"field-name-field-website")]//div[contains(@class, "field-item even")]/a/@href'
-		AGE_GROUP      = '//div[contains(@class, "field-name-field-age")]//div[contains(@class,"field-items")]//div[contains(@class,"field-item")]/text()'
-		PRICE          = '//div[contains(@class, "field-name-field-price")]//div[contains(@class,"field-items")]//div[contains(@class,"field-item")]/text()'
+		AGE_GROUP        = '//div[contains(@class, "field-name-field-age")]//div[contains(@class,"field-items")]//div[contains(@class,"field-item")]/text()'
+		PRICE            = '//div[contains(@class, "field-name-field-price")]//div[contains(@class,"field-items")]//div[contains(@class,"field-item")]/text()'
 
 		event = MommypoppinsItem()
 		
@@ -72,7 +76,7 @@ class Wizard(scrapy.Spider):
 		return event
 		                
 	def parse(self, response):
-		# base
+		
 		SET_SELECTOR = '.view-content'
 		urls         = []
 		# parse content 
