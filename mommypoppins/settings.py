@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'mommypoppins.spiders'
 
 MONGODB_URI = 'mongodb://localhost:27017'
 MONGODB_DATABASE = 'mommy'
-MONGODB_COLLECTION = 'schedule'
+MONGODB_COLLECTION = 'crawl'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'mommypoppins (+http://www.yourdomain.com)'

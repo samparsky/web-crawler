@@ -25,18 +25,20 @@ pip install -r requirements.txt
 The mongodb collection schema is as follows
 
 ```python
-    event_name   = scrapy.Field()
-    description  = scrapy.Field()
-    age_group    = scrapy.Field()
-    location     = scrapy.Field()
-    price        = scrapy.Field()
-    link		 = scrapy.Field()
-    event_link   = scrapy.Field()
-    date   		 = scrapy.Field()
+    event_name  
+    description 
+    age_group    
+    location     
+    price        
+    link		 
+    event_link 
+    date
 ```
-""" This function parses a sample response. Some contracts are mingled
-		with this docstring.
-		@url http://www.babynamewizard.com/name-list/english-girls-names-most-popular-names-for-girls-in-england
-		@returns items 1 1
-		@scrapes gender country region names
-		"""
+The mongodb database is `mommy` and the collection is `crawl`
+To view the crawled data run the below commands at the mongo shell
+
+```
+ > use mommy
+ > db.crawl.find()
+
+```
