@@ -37,7 +37,7 @@ The mongodb collection schema is as follows
 The mongodb database is `mommy` and the collection is `crawl`
 To view the crawled data run the below commands at the mongo shell
 
-```
+```sh
  > use mommy
  > db.crawl.find()
 
